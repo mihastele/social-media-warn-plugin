@@ -1,4 +1,6 @@
+/* global $ */
 // alert("Warning: You are visiting a social media site!");
+
 
 
 let modal = document.createElement("div");
@@ -31,7 +33,7 @@ modalHeader.innerText = "Warning: You are visiting a social media site!";
 modalHeader.style.margin = "0";
 modalHeader.style.padding = "0";
 modalHeader.style.color = "#000";
-    
+
 let modalBody = document.createElement("p");
 modalBody.innerText = "You are about to visit a social media site. Are you sure you want to continue?";
 modalBody.style.margin = "0";
@@ -45,7 +47,7 @@ modalFooter.style.width = "100%";
 modalFooter.style.marginTop = "20px";
 
 let yesButton = document.createElement("button");
-yesButton.innerText = "Yes";
+yesButton.innerText = "Destroy";
 yesButton.style.padding = "10px 20px";
 yesButton.style.borderRadius = "5px";
 yesButton.style.border = "none";
@@ -54,7 +56,7 @@ yesButton.style.color = "#fff";
 yesButton.style.cursor = "pointer";
 
 let noButton = document.createElement("button");
-noButton.innerText = "No";
+noButton.innerText = "Continue";
 noButton.style.padding = "10px 20px";
 noButton.style.borderRadius = "5px";
 noButton.style.border = "none";
@@ -62,12 +64,46 @@ noButton.style.backgroundColor = "#f44336";
 noButton.style.color = "#fff";
 noButton.style.cursor = "pointer";
 
-modalFooter.appendChild(yesButton);
-modalFooter.appendChild(noButton);
+// add image DOM element
+let image = document.createElement("img");
+
+// let userAgentString = navigator.userAgent;
+// // Detect Chrome
+// let chromeAgent = userAgentString.indexOf("Chrome") > -1;
+//
+// // Detect Firefox
+// let firefoxAgent = userAgentString.indexOf("Firefox") > -1;
+//
+// // Load the appropriate image
+// if (chromeAgent) {
+//     // Load the Chrome image
+//     image.src = chrome.extension.getURL("images/chrome.png");
+// } else if (firefoxAgent) {
+//     // Load the Firefox image
+//     image.src = chrome.extension.getURL("images/firefox.png");
+// } else {
+//     // Load the default image
+// }
+image.src = chrome.extension.getURL("doge.jpg");
+image.style.width = "300px";
+image.style.height = "300px";
+image.style.marginBottom = "20px";
+
+
+
+// modalFooter.appendChild(yesButton);
+// modalFooter.appendChild(noButton);
+modalBody.appendChild(image);
 modalContent.appendChild(modalHeader);
 modalContent.appendChild(modalBody);
 modalContent.appendChild(modalFooter);
 modal.appendChild(modalContent);
 document.body.appendChild(modal);
+
+// noButton.onclick = function() {
+//    $("#modal").hide();
+// }
+
+// unfortunately content block policy blocks running scripts, so we cannot make fancy buttone :P
 
 $("#modal").show();
