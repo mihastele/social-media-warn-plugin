@@ -1,0 +1,13 @@
+{
+  "name": "Social Media Warning",
+  "version": "1.0",
+  "description": "Warns you when you visit Facebook or LinkedIn",
+  "manifest_version": 2,
+  "permissions": ["tabs"],
+  "content_scripts": [
+    {
+      "matches": ["*://www.facebook.com/*", "*://www.linkedin.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
