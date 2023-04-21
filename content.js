@@ -64,46 +64,15 @@ noButton.style.backgroundColor = "#f44336";
 noButton.style.color = "#fff";
 noButton.style.cursor = "pointer";
 
-// add image DOM element
-let image = document.createElement("img");
-
-// let userAgentString = navigator.userAgent;
-// // Detect Chrome
-// let chromeAgent = userAgentString.indexOf("Chrome") > -1;
-//
-// // Detect Firefox
-// let firefoxAgent = userAgentString.indexOf("Firefox") > -1;
-//
-// // Load the appropriate image
-// if (chromeAgent) {
-//     // Load the Chrome image
-//     image.src = chrome.extension.getURL("images/chrome.png");
-// } else if (firefoxAgent) {
-//     // Load the Firefox image
-//     image.src = chrome.extension.getURL("images/firefox.png");
-// } else {
-//     // Load the default image
-// }
-image.src = chrome.extension.getURL("doge.jpg");
-image.style.width = "150px";
-image.style.height = "150px";
-image.style.marginBottom = "20px";
 
 
 
-// modalFooter.appendChild(yesButton);
-// modalFooter.appendChild(noButton);
-// modalBody.appendChild(image);
 modalContent.appendChild(modalHeader);
 modalContent.appendChild(modalBody);
 modalContent.appendChild(modalFooter);
 modal.appendChild(modalContent);
 document.body.appendChild(modal);
 
-// noButton.onclick = function() {
-//    $("#modal").hide();
-// }
 
-// unfortunately content block policy blocks running scripts, so we cannot make fancy buttone :P
 
 $("#modal").show();
