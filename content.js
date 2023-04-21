@@ -85,15 +85,15 @@ let image = document.createElement("img");
 //     // Load the default image
 // }
 image.src = chrome.extension.getURL("doge.jpg");
-image.style.width = "300px";
-image.style.height = "300px";
+image.style.width = "150px";
+image.style.height = "150px";
 image.style.marginBottom = "20px";
 
 
 
 // modalFooter.appendChild(yesButton);
 // modalFooter.appendChild(noButton);
-modalBody.appendChild(image);
+// modalBody.appendChild(image);
 modalContent.appendChild(modalHeader);
 modalContent.appendChild(modalBody);
 modalContent.appendChild(modalFooter);
